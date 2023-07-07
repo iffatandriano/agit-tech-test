@@ -1,2 +1,5 @@
+import { users } from "./users.types";
 
-export const slicesTypes = {};
+export const slicesTypes = {
+    ...users
+};

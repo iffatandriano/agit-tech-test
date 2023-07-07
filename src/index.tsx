@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+
+import reportWebVitals from './configs/reportWebVitals';
 import store from './store';
+import ToasterProviders from './utils/providers/ToasterProviders';
+
+import './styles/index.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +16,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
+      <ToasterProviders />
     </Provider>
   </React.StrictMode>
 );
