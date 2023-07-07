@@ -104,7 +104,7 @@ const UserPage = () => {
                     </div>
                     <hr />
                     <TableWrapper user={records} error={error} isLoading={isLoading} />
-                    {!isLoading && (
+                    {!isLoading && records?.length > 0 ? (
                         <div className='w-[20vh] flex flex-row justify-end items-center gap-4 float-right'>
                             <Button
                                 disabled={!_.isEmpty(records)} 
@@ -120,7 +120,7 @@ const UserPage = () => {
                                 icon={AiOutlineArrowRight}
                             />
                         </div>
-                    )}
+                    ) : null}
                 </div>
             </Card>
         </React.Fragment>
